@@ -16,7 +16,14 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
             appBar: AppBar(
               title:
-                  Text("TextField in Flutter", style: TextStyle(fontSize: 20)),
+                  Text("TextField in Flutter", style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.underline,
+                    decorationColor: Colors.black,
+                    decorationThickness: 2)
+            ),
+              elevation: 4.0,
               centerTitle: true,
               backgroundColor: Colors.yellow,
             ),
