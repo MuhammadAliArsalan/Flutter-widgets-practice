@@ -7,7 +7,7 @@ void main() {
 class MyApp extends StatelessWidget {
   var emailText = TextEditingController();
   var nameText = TextEditingController();
-  var phonetext=TextEditingController();
+  var phonetext = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,6 @@ class MyApp extends StatelessWidget {
                       obscuringCharacter: '*',
                       // enabled: false, //This property disables the TextField, making it unresponsive to user input.
                       decoration: InputDecoration(
-
                           focusedBorder: OutlineInputBorder(
                             //This defines the border when the TextField is focused (i.e., when the user taps on it to enter text).
                             borderRadius: BorderRadius.circular(20),
@@ -99,52 +98,50 @@ class MyApp extends StatelessWidget {
                             ) //This adds an icon to the TextField.
                             ),
                       )),
-                      SizedBox(height: 10),
-                      Container(
-                        width: 200,
-                        height:100,
-                        child:TextField(
-                            controller: phonetext,    
-                            keyboardType: TextInputType.phone,
-                            decoration: InputDecoration(
-                                border:OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                    borderSide: BorderSide(
-                                        color: Colors.purple, width: 2.0)),
-                                    labelText: "Phone",
-                                    hintText: "Enter your phone number",
-                                    labelStyle: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 14,
-                                    ),
-                                    hintStyle: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 14,
-                                    ),
-                                    prefixIcon: Icon(
-                                      Icons.phone,
-                                      color: Colors.black,
-                                    ) //This adds an icon to the TextField.
-                                    
-                                ),
-                                
+                  SizedBox(height: 10),
+                  Container(
+                    width: 200,
+                    height: 100,
+                    child: TextField(
+                      controller: phonetext,
+                      keyboardType: TextInputType.phone,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide:
+                                  BorderSide(color: Colors.purple, width: 2.0)),
+                          labelText: "Phone",
+                          hintText: "Enter your phone number",
+                          labelStyle: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                          ),
+                          hintStyle: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                          ),
+                          prefixIcon: Icon(
+                            Icons.phone,
+                            color: Colors.black,
+                          ) //This adds an icon to the TextField.
 
-                            ),
-                        ),
-              
-                      ElevatedButton(onPressed:(){
+                          ),
+                    ),
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
                         String name = nameText.text;
-                      String email = emailText.text;
+                        String email = emailText.text;
 
-                      if (phonetext.text.isNotEmpty) {
-                        int phone = int.tryParse(phonetext.text) ?? 0;
-                        print("Name: $name, Email: $email, Phone: $phone");
-                      } else {
-                        print("Phone number is empty!");
-                      }
-                    }, child: Text("Login"))
+                        if (phonetext.text.isNotEmpty) {
+                          int phone = int.tryParse(phonetext.text) ?? 0;
+                          print("Name: $name, Email: $email, Phone: $phone");
+                        } else {
+                          print("Phone number is empty!");
+                        }
+                      },
+                      child: Text("Login"))
                 ],
-                
               ),
             )));
   }
