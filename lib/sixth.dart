@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     decoration: TextDecoration.underline,
-                    decorationColor: Colors.black,
+                    decorationColor: Colors.pinkAccent,
                     decorationThickness: 2)
             ),
               elevation: 4.0,
