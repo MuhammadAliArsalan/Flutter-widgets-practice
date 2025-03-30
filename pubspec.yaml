@@ -61,6 +61,7 @@ flutter:
   assets:
     - assets/alphine passive black cooling fan.png
     - assets/Cisco_Catalyst_ 9200.png
+    - assets/gfg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
