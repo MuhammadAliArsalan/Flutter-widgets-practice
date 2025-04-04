@@ -20,7 +20,7 @@ class ListViewBuilder extends StatelessWidget{
           height: double.infinity,
           width:380,
           child: Padding(padding: EdgeInsets.all(10),
-          child: ListView.builder(itemCount: 10,itemBuilder:(context,index){
+          child: ListView.builder(itemCount: 10,itemBuilder:(context,int index){
 
             /*ListView.builder() dynamically creates a scrollable list.
              itemCount: 10 → Generates 10 items (from index 0 to index 9).
