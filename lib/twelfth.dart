@@ -61,6 +61,7 @@ class listView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
         home: Scaffold(
       appBar: AppBar(
         title: Text("ListView exmaples",
@@ -81,14 +82,14 @@ class listView extends StatelessWidget {
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.blueGrey, width: 2),
                   ),
-                  child: ListView.builder(itemCount: titles.length,itemBuilder: (context, index) {
+                  child: ListView.separated(itemCount: titles.length,itemBuilder: (context, index) {
                     return ListTile(
                       leading: Icon(leadingIcons[index] == "person"
                           ? Icons.person
                           : Icons.home),
                       title: Text(titles[index],
                           style:
-                              TextStyle(color: Colors.blueGrey, fontSize: 10)),
+                              TextStyle(color: Colors.blueGrey, fontSize: 12)),
                       subtitle: Text(subtitles[index],
                           style: TextStyle(
                               fontFamily: 'Times New Roman',
@@ -100,7 +101,10 @@ class listView extends StatelessWidget {
                         print("Tapped on ${titles[index]}"),
                       },
                     );
-                  })))),
+                  },separatorBuilder: (context, index) => SizedBox(height: 12,child:Divider(color: Colors.black,thickness: 2.0,))),
+                  
+                  
+                  ))),
     ));
   }
 }
