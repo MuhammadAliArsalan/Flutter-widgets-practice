@@ -32,12 +32,10 @@ class MyApp extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       width: 250,
-                      height: 250,
-                     
+                      height: 250,       
                       decoration: BoxDecoration(
                         color: Colors.yellow,
                         border: Border.all(color:Colors.lightBlueAccent,width: 3)
-
                       ),
                     ),
                     Container(
