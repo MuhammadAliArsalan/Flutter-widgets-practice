@@ -61,50 +61,57 @@ class listView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
-      appBar: AppBar(
-        title: Text("ListView exmaples",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-        backgroundColor: Colors.lightBlue,
-        centerTitle: true,
-        elevation: 5,
-        shadowColor: Colors.black,
-      ),
-      body: SizedBox(
-          height: double.infinity,
-          width: 400,
-          child: Padding(
-              padding: EdgeInsets.all(5),
-              child: Container(
-                  height: 100,
-                  width: 300,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.blueGrey, width: 2),
-                  ),
-                  child: ListView.separated(itemCount: titles.length,itemBuilder: (context, index) {
-                    return ListTile(
-                      leading: Icon(leadingIcons[index] == "person"
-                          ? Icons.person
-                          : Icons.home),
-                      title: Text(titles[index],
-                          style:
-                              TextStyle(color: Colors.blueGrey, fontSize: 12)),
-                      subtitle: Text(subtitles[index],
-                          style: TextStyle(
-                              fontFamily: 'Times New Roman',
-                              color: Colors.deepOrange)),
-                      trailing: Icon(trailingIcons[index] == "arrow_forward"
-                          ? Icons.arrow_forward
-                          : Icons.arrow_back),
-                      onTap: () => {
-                        print("Tapped on ${titles[index]}"),
-                      },
-                    );
-                  },separatorBuilder: (context, index) => SizedBox(height: 12,child:Divider(color: Colors.black,thickness: 2.0,))),
-                  
-                  
+          appBar: AppBar(
+            title: Text("ListView exmaples",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+            backgroundColor: Colors.lightBlue,
+            centerTitle: true,
+            elevation: 5,
+            shadowColor: Colors.black,
+          ),
+          body: SizedBox(
+              height: double.infinity,
+              width: 400,
+              child: Padding(
+                  padding: EdgeInsets.all(5),
+                  child: Container(
+                    height: 100,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.blueGrey, width: 2),
+                    ),
+                    child: ListView.separated(
+                        itemCount: titles.length,
+                        itemBuilder: (context, index) {
+                          return ListTile(
+                            leading: Icon(leadingIcons[index] == "person"
+                                ? Icons.person
+                                : Icons.home),
+                            title: Text(titles[index],
+                                style: TextStyle(
+                                    color: Colors.blueGrey, fontSize: 12)),
+                            subtitle: Text(subtitles[index],
+                                style: TextStyle(
+                                    fontFamily: 'Times New Roman',
+                                    color: Colors.deepOrange)),
+                            trailing: Icon(
+                                trailingIcons[index] == "arrow_forward"
+                                    ? Icons.arrow_forward
+                                    : Icons.arrow_back),
+                            onTap: () => {
+                              print("Tapped on ${titles[index]}"),
+                            },
+                          );
+                        },
+                        separatorBuilder: (context, index) => SizedBox(
+                            height: 12,
+                            child: Divider(     //divider is a horizontal line
+                              color: Colors.black,
+                              thickness: 2.0,
+                            ))),
                   ))),
-    ));
+        ));
   }
 }
