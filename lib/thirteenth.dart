@@ -19,11 +19,13 @@ class GridViewExample extends StatelessWidget {
                   centerTitle: true,
                   backgroundColor: Colors.lightBlue,
                   elevation: 5,
-                  bottom: TabBar(tabs: [
+                  bottom: TabBar(
+                    tabs: [
                     Tab(text: "Home", icon: Icon(Icons.home)),
                     Tab(text: "Favorite", icon: Icon(Icons.favorite)),
                     Tab(text: "Settings", icon: Icon(Icons.settings)),
-                  ]),
+                  ]
+                  ),
                 ),
                 body: SizedBox(
                     height: double.infinity,
